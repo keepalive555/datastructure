@@ -1,8 +1,11 @@
-# study
-数据结构、算法的学习示例代码。
+# Study
+
+## 简介
+
+此工程作为笔者日常学习示例代码汇总仓库，分为许多不同小节，可以依次查看。
 
 ## 数据结构
 
 数据结构学习示例代码整理如下：
 
-1、[`SKipList`](https://github.com/keepalive555/study/blob/master/skiplist/skiplist.c)
+1、[SKipList](https://github.com/keepalive555/study/blob/master/skiplist/skiplist.c)
