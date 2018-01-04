@@ -1,6 +1,10 @@
 # Prerequisites
 *.d
 
+# editor
+*.swo
+*.swp
+
 # Object files
 *.o
 *.ko
