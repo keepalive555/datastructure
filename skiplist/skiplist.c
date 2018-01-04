@@ -163,8 +163,50 @@ void insert_node(SkipList *list, KeyType key, ValueType value) {
 }
 
 
-void delete(SkipList *list, KeyType key) {
+void delete(SkipList *list) {
     // 删除key指定的节点
+    Node *p = list->head->forward[0];
+    Node *q;
+    while(p != NULL) {
+        q = p->forward[0];
+        free((void *)p);
+        p = q;
+    }
+    free((void *)list);
+}
+
+
+void delete_node(SkipList *list, KeyType key) {
+    // 从SkipList中删除节点
+    Node *node = list->head;
+    Node *update[MAX_LEVEL];
+    Node *next;
+    int i;
+    for(i=0; i<MAX_LEVEL; i++) {
+        update[i] = list->head;
+    }
+    for(i=list->level-1; i>=0; i--) {
+        while(node->forward[i]->key < key) {
+            node = node->forward[i];
+        }
+        update[i] = node;
+    }
+    next = node->forward[0];
+    if(next->key == key) {
+        // 找到该节点，并删除该节点
+        for(i=0; i<MAX_LEVEL; i++) {
+            if(update[i]->forward[i] == next) {
+                update[i]->forward[i] = next->forward[i];
+            }
+        }
+        free((void *)next);
+        next = NULL;
+        // 修正SkipList level
+        while(list->level > 0 \
+              && list->head->forward[list->level] == NIL) {
+            list->level--;
+        }
+    }
 }
 
 int main() {
@@ -190,4 +232,14 @@ int main() {
     if(node != NULL) {
         printf("find value: %d\n", node->value);
     }
+#ifndef NDEBUG
+    printf("delete node!\n");
+    delete_node(list, 499);
+    printf("delete node sucess!\n");
+#endif
+    node = find(list, 499);
+    if(node != NULL) {
+        printf("find value: %d\n", node->value);
+    }
+    delete(list);
 }
