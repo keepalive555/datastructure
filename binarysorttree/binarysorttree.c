@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <assert.h>
 
-// 二叉排序树
-// TODO: @gatsby 优化代码
 
 typedef int ElementType;
 typedef int KeyType;
@@ -15,30 +13,8 @@ typedef struct _node {
     struct _node *rchild;
 } Node, *BSTree;
 
-
-int find_node_r(BSTree tree, KeyType key, Node *parent, Node **p) {
-    // 递归方式遍历搜索二叉排序树
-    // FIXME: 特殊情况不需要遍历的
-    if(!tree) {
-        // 空树
-        *p = parent;
-        return -1;
-    } else if(key == tree->key) {
-        // 查找成功
-        *p = tree;
-        return 0;
-    } else if(key < tree->key) {
-        // 搜索左子树
-        return find_node_r(tree->lchild, key, tree, p);
-    } else {
-        // 搜索右子树
-        return find_node_r(tree->rchild, key, tree, p);
-    }
-}
-
-
 Node *find_node(BSTree tree, KeyType key) {
-    // 已非递归方式遍历二叉排序树
+    // 非递归方式查找节点
     if(!tree) {
         return NULL;
     }
@@ -108,7 +84,7 @@ void iter(BSTree tree) {
 
 
 void delete_node(BSTree *tree, KeyType key) {
-    // 从二叉排序树tree上删除key标识的节点
+    // 删除节点
     // 如果查找到目标节点，且目标节点为叶子节点，则直接删除节点
     // 如果目标节点仅有左子树或右子树则直接删除，删除节点后需要找到直接前驱与直接后继节点
     if(!*tree) {
@@ -134,42 +110,33 @@ void delete_node(BSTree *tree, KeyType key) {
             p = &parent->rchild;
         }
     }
-#ifndef NDEBUG
-    printf("delete_node find node: %p, *p=%p\n", cur, *p);
-#endif
-    // 查找到节点
     if(cur) {
-        // 如果p为NULL，则说明cur节点是根节点
         if(!cur->lchild) {
-            // 如果目标节点不存在左子树
-            if(p) {
-                *p = cur->rchild;
-            }
+            // 仅有右子树
+            *p = cur->rchild;
         } else if(!cur->rchild) {
-            // 如果目标节点不存在右子树
-            if(p) {
-                *p = cur->lchild;
-            }
+            // 仅有左子树
+            *p = cur->lchild;
         } else {
-            // 左转
+            // 左右子树均存在，左拐并寻找至右子树最后一个节点。
             prev = cur->lchild;
-            while(prev->rchild) {
+            while(prev->rchild != NULL) {
                 prev_parent = prev;
                 prev = prev->rchild;
             }
-#ifndef NDEBUG
-    printf("with left, right child: prev=%p, prev_parent=%p\n", prev, prev_parent);
-#endif
-            // 此时prev指向待删除节点的直接前驱节点
-            prev->lchild = cur->lchild;
+            if(prev != cur->lchild) {
+                prev->lchild = cur->lchild;
+            }
             prev->rchild = cur->rchild;
             *p = prev;
             if(!prev_parent) {
                 prev_parent->rchild = NULL;
             }
-            free((void *)cur);
-            cur = NULL;
         }
+    }
+    if(cur) {
+        free((void *)cur);
+        cur = NULL;
     }
     return ;
 }
@@ -178,7 +145,7 @@ void delete_node(BSTree *tree, KeyType key) {
 int main(void) {
     // 输入如果为有序的，则二叉排序树退化为斜树，单链表
     // int a[] = {1, 3, 5, 6, 8, 10, 12, 13};
-    int a[] = {8, 9, 1, 3, 4, 5, 6, 10, 12, 13, 15};
+    int a[] = {8, 12, 1, 3, 4, 5, 6, 10, 9, 13, 15};
     int n = sizeof(a) / sizeof(int);
     BSTree tree = NULL;
     // 构建二叉排序树
@@ -187,16 +154,17 @@ int main(void) {
         insert_node(&tree, a[i], a[i]);
     }
     // 搜索二叉排序树
-    Node *p = find_node(tree, 10);
+    Node *p = find_node(tree, 8);
 #ifndef NDEBUG
     printf("pointer of p: %p\n", p);
 #endif
     if(p) {
         printf("find node vlaue: %d\n", p->data);
     }
-    delete_node(&tree, 10);
+    // iter(tree);
+    delete_node(&tree, 8);
     iter(tree);
-    p = find_node(tree, 10);
+    p = find_node(tree, 8);
 #ifndef NDEBUG
     printf("pointer of p: %p\n", p);
 #endif
