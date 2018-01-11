@@ -16,6 +16,8 @@
 
 3、[插入查找](https://github.com/keepalive555/study/blob/master/binarysearch/interpolationsearch.c)
 
+4、[二叉搜索树](https://github.com/keepalive555/study/blob/master/binarysorttree/binarysorttree.c)
+
 
 ### 排序算法
 
@@ -23,4 +25,8 @@
 
 2、[选择排序](https://github.com/keepalive555/study/blob/master/sort/select.c)
 
-3、[插入排序](https://github.com/keepalive555/study/blob/master/sort/insert.c)ß
+3、[插入排序](https://github.com/keepalive555/study/blob/master/sort/insert.c)
+
+### Bitmap
+
+1、[Bitmap快速查找](https://github.com/keepalive555/study/blob/master/bitmap/bitmap.c)
