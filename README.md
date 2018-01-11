@@ -23,4 +23,4 @@
 
 2、[选择排序](https://github.com/keepalive555/study/blob/master/sort/select.c)
 
-3、[插入排序](https://github.com/keepalive555/study/blob/master/sort/insert.c)
+3、[插入排序](https://github.com/keepalive555/study/blob/master/sort/insert.c)ß
