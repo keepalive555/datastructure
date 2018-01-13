@@ -27,6 +27,8 @@
 
 3、[插入排序](https://github.com/keepalive555/study/blob/master/sort/insert.c)
 
+4、[堆排序](https://github.com/keepalive555/study/blob/master/sort/heap.c)
+
 ### Bitmap
 
 1、[Bitmap快速查找](https://github.com/keepalive555/study/blob/master/bitmap/bitmap.c)
