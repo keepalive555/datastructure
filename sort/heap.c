@@ -9,12 +9,8 @@
 
 #define MAXSIZE 1024
 #define PARENT(i) ((i-1)/2)
-// #define LEFT(i) (2*i+1)
+#define LEFT(i) (2*i+1)
 #define RIGHT(i) (2*i+2)
-
-int LEFT(int i) {
-    return 2*i+1;
-}
 
 // 举个例子：9, 8, 6, 7, 5, 1, 4, 2, 3
 // 下标从0开始的话，下标范围：0~8
