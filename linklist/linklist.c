@@ -17,6 +17,12 @@ int has_cycle(LinkList L) {
     // 快指针是否有直接后继
     // 快指针的后继节点是否存在后继
     while(fast->next != NULL && fast->next->next != NULL) {
+        // 慢指针移动S个节点
+        // 快指针移动2S个节点
+        // 环入口离头结点为X
+        // 环入口离相遇节点为y
+        // 环的长度为r
+        // 链表的长度为L
         slow = slow->next;
         fast = fast->next->next;
 
