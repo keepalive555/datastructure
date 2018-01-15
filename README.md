@@ -34,3 +34,7 @@
 ### Bitmap
 
 1、[Bitmap快速查找](https://github.com/keepalive555/study/blob/master/bitmap/bitmap.c)
+
+### 链表
+
+1、[快慢指针检测单链表是否有环](https://github.com/keepalive555/study/blob/master/linklist/linklist.c)
