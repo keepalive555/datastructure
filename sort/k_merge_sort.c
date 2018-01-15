@@ -37,6 +37,15 @@ void swap(int *a, int *b) {
     *a = *a ^ *b;
 }
 
+void print_sequence(int *arr, int size) {
+    int i;
+    printf("=======================\n");
+    for(i=0; i<size; i++) {
+        printf("(i=%d, value=%d) ", i, arr[i]);
+    }
+    printf("\n=======================\n");
+}
+
 LoserTree *create_losertree(int k) {
     // 创建败者树
     LoserTree *ls = (LoserTree *)malloc(sizeof(LoserTree));
@@ -61,9 +70,11 @@ LoserTree *create_losertree(int k) {
         ls->ls[i] = ls->k;
     }
     ls->b[ls->k] = MINKEY;
-    for(i=ls->k-1; i>=0; i--) {
-        adjust(ls, i);
-    }
+    // for(i=ls->k-1; i>=0; i--) {
+    //     adjust(ls, i);
+    // }
+    // print_sequence(ls->b, ls->k+1);
+    // print_sequence(ls->ls, ls->k);
     return ls;
 }
 
@@ -104,18 +115,22 @@ void k_merge(Array *arrays, int k) {
     for(i=0; i<ls->k; i++) {
         ls->b[i] = arrays[i].arr[arrays[i].pos++];
     }
-    // 持续比较
+    for(i=0; i<ls->k; i++) {
+        adjust(ls, i);
+    }
+    print_sequence(ls->b, ls->k+1);
+    print_sequence(ls->ls, ls->k);
     int p;
     while(!finished(arrays, k)) {
         p = ls->ls[0];
-        printf(">>%d\n", ls->b[0]);
+        printf(">>%2d(%2d)=%2d\n", p, arrays[p].pos, ls->b[p]);
 
         if(arrays[p].pos < arrays[p].size) {
-            ls->b[p] = arrays[p].arr[arrays[p].pos];
-            adjust(ls, p);
+            ls->b[p] = arrays[p].arr[++arrays[p].pos];
         } else {
             ls->b[p] = MAXKEY;
         }
+        adjust(ls, p);
         sleep(1);
     }
 }
