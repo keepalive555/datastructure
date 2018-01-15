@@ -54,7 +54,6 @@ void heap_sort(int *arr, int length) {
     // 将数组初始化为大顶堆
     int i, j;
     for(i=length/2-1; i>=0; i--) {
-        printf("adjust loop i=%d\n", i);
         heap_adjust(arr, length, i);
     }
     // 堆排序
