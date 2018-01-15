@@ -70,11 +70,6 @@ LoserTree *create_losertree(int k) {
         ls->ls[i] = ls->k;
     }
     ls->b[ls->k] = MINKEY;
-    // for(i=ls->k-1; i>=0; i--) {
-    //     adjust(ls, i);
-    // }
-    // print_sequence(ls->b, ls->k+1);
-    // print_sequence(ls->ls, ls->k);
     return ls;
 }
 
@@ -90,6 +85,19 @@ void adjust(LoserTree *ls, int i) {
         t = t / 2;
     }
     ls->ls[0] = i;
+}
+
+void delete(LoserTree *ls) {
+    if(!ls) {
+        return ;
+    }
+    if(ls->ls) {
+        SAFE_FREE(ls->ls);
+    }
+    if(ls->b) {
+        SAFE_FREE(ls->b);
+    }
+    SAFE_FREE(ls);
 }
 
 int finished(Array *arrays, int k) {
@@ -135,6 +143,7 @@ void k_merge(Array *arrays, int k) {
         adjust(ls, p);
         // sleep(1);
     }
+    delete(ls);
 }
 
 int main(void) {
