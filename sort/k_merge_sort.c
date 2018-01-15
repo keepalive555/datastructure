@@ -113,9 +113,10 @@ void k_merge(Array *arrays, int k) {
     }
     int i;
     for(i=0; i<ls->k; i++) {
-        ls->b[i] = arrays[i].arr[arrays[i].pos++];
+        ls->b[i] = arrays[i].arr[arrays[i].pos];
     }
-    for(i=0; i<ls->k; i++) {
+    // 调整败者树
+    for(i=ls->k-1; i>=0; i--) {
         adjust(ls, i);
     }
     print_sequence(ls->b, ls->k+1);
@@ -124,14 +125,15 @@ void k_merge(Array *arrays, int k) {
     while(!finished(arrays, k)) {
         p = ls->ls[0];
         printf(">>%2d(%2d)=%2d\n", p, arrays[p].pos, ls->b[p]);
+        arrays[p].pos++;
 
         if(arrays[p].pos < arrays[p].size) {
-            ls->b[p] = arrays[p].arr[++arrays[p].pos];
+            ls->b[p] = arrays[p].arr[arrays[p].pos];
         } else {
             ls->b[p] = MAXKEY;
         }
         adjust(ls, p);
-        sleep(1);
+        // sleep(1);
     }
 }
 
