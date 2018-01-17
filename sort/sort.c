@@ -20,17 +20,16 @@ void swap(int *a, int *b) {
 void bubble_sort(Sequence *seq) {
     int i, j;
     for(i=0; i<seq->length; i++) {
+        printf(">>>>>>> i=%d\n", i);
         for(j=i+1; j<seq->length; j++) {
-            if(seq->array[i] > seq->array[j]) {
-                swap(&seq->array[i], &seq->array[j]);
+            // 冒泡排序交换相邻的连个变量
+            if(seq->array[j-1] < seq->array[j]) {
+                swap(&seq->array[j-1], &seq->array[j]);
             }
         }
+        printf("%d\n", seq->array[seq->length-1-i]);
     }
 }
-
-// 冒泡排序复杂度分析
-// O() = 1 + 2 + 3 + ... + (n - 1)
-// O(n^2) = (n - 1) * n / 2 = (n*n - n) / 2
 
 
 int main(void) {
@@ -41,7 +40,7 @@ int main(void) {
     seq.array[2] = 8;
     seq.array[3] = 1;
     seq.array[4] = 2;
-    seq.array[5] = 4;
+    seq.array[5] = 4; 
     seq.array[6] = 5;
     seq.array[7] = 6;
     seq.array[8] = 7;
