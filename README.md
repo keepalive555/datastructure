@@ -31,6 +31,8 @@
 
 5、[K路归并排序](https://github.com/keepalive555/study/blob/master/sort/k_merge_sort.c)
 
+6、[快速排序](https://github.com/keepalive555/study/blob/master/sort/k_merge_sort.c)
+
 ### Bitmap
 
 1、[Bitmap快速查找](https://github.com/keepalive555/study/blob/master/bitmap/bitmap.c)
