@@ -43,4 +43,4 @@
 
 1、[LRU算法Python实现](https://github.com/keepalive555/study/blob/master/os/lru.py)
 
-2、[LRU算法C实现](https://github.com/keepalive555/study/blob/master/os/lru.c)
+2、[LRU算法C实现(编辑中)](https://github.com/keepalive555/study/blob/master/os/lru.c)
