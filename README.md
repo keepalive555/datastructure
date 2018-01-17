@@ -38,3 +38,7 @@
 ### 链表
 
 1、[快慢指针检测单链表是否有环](https://github.com/keepalive555/study/blob/master/linklist/linklist.c)
+
+### 操作系统
+
+1、[LRU算法Python实现](https://github.com/keepalive555/study/blob/master/os/lru.py)
