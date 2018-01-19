@@ -20,14 +20,12 @@ void swap(int *a, int *b) {
 void bubble_sort(Sequence *seq) {
     int i, j;
     for(i=0; i<seq->length; i++) {
-        printf(">>>>>>> i=%d\n", i);
         for(j=i+1; j<seq->length; j++) {
             // 冒泡排序交换相邻的连个变量
             if(seq->array[j-1] < seq->array[j]) {
                 swap(&seq->array[j-1], &seq->array[j]);
             }
         }
-        printf("%d\n", seq->array[seq->length-1-i]);
     }
 }
 
