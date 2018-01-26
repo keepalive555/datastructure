@@ -31,7 +31,7 @@
 
 5、[K路归并排序](https://github.com/keepalive555/study/blob/master/sort/k_merge_sort.c)
 
-6、[快速排序](https://github.com/keepalive555/study/blob/master/sort/k_merge_sort.c)
+6、[快速排序](https://github.com/keepalive555/study/blob/master/sort/quick_sort.c)
 
 ### Bitmap
 
@@ -46,3 +46,7 @@
 1、[LRU算法Python实现](https://github.com/keepalive555/study/blob/master/os/lru.py)
 
 2、[LRU算法C实现(编辑中)](https://github.com/keepalive555/study/blob/master/os/lru.c)
+
+### 算法
+
+1、[动态规划解决硬币问题](https://github.com/keepalive555/study/blob/master/algorithms/dp.c)
