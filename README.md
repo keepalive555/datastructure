@@ -10,30 +10,30 @@
 
 ### 查找算法
 
-- [SKipList](https://github.com/keepalive555/study/blob/master/skiplist/skiplist.c)
-- [二分查找](https://github.com/keepalive555/study/blob/master/binarysearch/binarysearch.c)
-- [插入查找](https://github.com/keepalive555/study/blob/master/binarysearch/interpolationsearch.c)
-- [二叉搜索树](https://github.com/keepalive555/study/blob/master/binarysorttree/binarysorttree.c)
+1. [SKipList](https://github.com/keepalive555/study/blob/master/skiplist/skiplist.c)
+2. [二分查找](https://github.com/keepalive555/study/blob/master/binarysearch/binarysearch.c)
+3. [插入查找](https://github.com/keepalive555/study/blob/master/binarysearch/interpolationsearch.c)
+4. [二叉搜索树](https://github.com/keepalive555/study/blob/master/binarysorttree/binarysorttree.c)
 
 
 ### 排序
 
-- [冒泡排序](https://github.com/keepalive555/study/blob/master/sort/sort.c)
-- [选择排序](https://github.com/keepalive555/study/blob/master/sort/select.c)
-- [插入排序](https://github.com/keepalive555/study/blob/master/sort/insert.c)
-- [堆排序](https://github.com/keepalive555/study/blob/master/sort/heap.c)
-- [快速排序](https://github.com/keepalive555/study/blob/master/sort/quick_sort.c)
-- [K路归并排序](https://github.com/keepalive555/study/blob/master/sort/k_merge_sort.c)
-- [Bitmap快速查找](https://github.com/keepalive555/study/blob/master/bitmap/bitmap.c)
+1. [冒泡排序](https://github.com/keepalive555/study/blob/master/sort/sort.c)
+2. [选择排序](https://github.com/keepalive555/study/blob/master/sort/select.c)
+3. [插入排序](https://github.com/keepalive555/study/blob/master/sort/insert.c)
+4. [堆排序](https://github.com/keepalive555/study/blob/master/sort/heap.c)
+5. [快速排序](https://github.com/keepalive555/study/blob/master/sort/quick_sort.c)
+6. [K路归并排序](https://github.com/keepalive555/study/blob/master/sort/k_merge_sort.c)
+7. [Bitmap快速查找](https://github.com/keepalive555/study/blob/master/bitmap/bitmap.c)
 
 ### 链表
 
-- [快慢指针检测单链表是否有环](https://github.com/keepalive555/study/blob/master/linklist/linklist.c)
+1. [快慢指针检测单链表是否有环](https://github.com/keepalive555/study/blob/master/linklist/linklist.c)
 
 ### 操作系统
 
-- [LRU算法C实现(编辑中)](https://github.com/keepalive555/study/blob/master/os/lru.c)
+1. [LRU算法C实现(编辑中)](https://github.com/keepalive555/study/blob/master/os/lru.c)
 
 ### 算法
 
-- [动态规划解决硬币问题](https://github.com/keepalive555/study/blob/master/algorithms/dp.c)
+1. [动态规划解决硬币问题](https://github.com/keepalive555/study/blob/master/algorithms/dp.c)
