@@ -25,6 +25,7 @@
 5. [快速排序](https://github.com/keepalive555/study/blob/master/sort/quick_sort.c)
 6. [K路归并排序](https://github.com/keepalive555/study/blob/master/sort/k_merge_sort.c)
 7. [Bitmap快速查找](https://github.com/keepalive555/study/blob/master/bitmap/bitmap.c)
+8. [BloomFilter](https://github.com/keepalive555/study/blob/master/bitmap/bloomfilter.c)
 
 ### 链表
 
